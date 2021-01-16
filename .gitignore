@@ -1,0 +1,6 @@
+.vscode
+logs/
+bin/
+
+go.sum
+*.log
