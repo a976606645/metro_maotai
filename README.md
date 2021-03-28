@@ -4,9 +4,9 @@
 # 项目截图
 
 <p align="center">
-  <img width="900" src="https://raw.githubusercontent.com/huwei365/mdl/master/document/images/example.PNG">
+  <img width="900" src="https://raw.githubusercontent.com/huwei365/metro_maotai/master/document/images/example.PNG">
 </p>
 
 <p align="center">
-  <img width="900" src="https://raw.githubusercontent.com/huwei365/mdl/master/document/images/storeList.PNG">
+  <img width="900" src="https://raw.githubusercontent.com/huwei365/metro_maotai/master/document/images/storeList.PNG">
 </p>
