@@ -14,24 +14,24 @@ import (
 )
 
 var DB *gorm.DB
+var isRun bool
 
 func main() {
+	wlog.DevelopMode()
+	wlog.Info("Author:huwei365@hotmail.com")
+
 	rand.Seed(time.Now().UnixNano())
 
 	DB = db.NewSqlite()
 	DB.AutoMigrate(&TableUser{})
 	DB.AutoMigrate(&TableOrder{})
 	DB.AutoMigrate(&TableStockRecord{})
-	wlog.DevelopMode()
 
 	c := cron.New(cron.WithSeconds())
-	// c.AddFunc("* * * * * *", func() {
-	// 	// 前一分钟准备好所有账号
-	// 	// 等待通知
-
-	// })
-
+	c.AddFunc("59 59 18 * * *", Start)
+	c.AddFunc("0 5 19 * * *", Stop)
 	c.AddFunc("0 0 19 * * *", CollectStock)
+	c.AddFunc("0 0 20 * * *", UpdateUser)
 	go c.Run()
 
 	g := gin.Default()

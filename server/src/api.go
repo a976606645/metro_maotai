@@ -47,3 +47,8 @@ type APIStockInfo struct {
 		} `json:"wareInfo"`
 	} `json:"data"`
 }
+
+type APISubmitOrder struct {
+	Code string `json:"code"`
+	Msg  string `json:"msg"`
+}

@@ -1,3 +1,12 @@
 # 说明
     麦德龙平台抢购茅台,在后台增加抢购用户的信息,到了19点自动抢购。
-    具体的截图以及部署方式等我有空再整理 ：）
+
+# 项目截图
+
+<p align="center">
+  <img width="900" src="https://raw.githubusercontent.com/huwei365/mdl/master/document/images/example.PNG">
+</p>
+
+<p align="center">
+  <img width="900" src="https://raw.githubusercontent.com/huwei365/mdl/master/document/images/storeList.PNG">
+</p>

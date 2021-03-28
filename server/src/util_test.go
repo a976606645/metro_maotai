@@ -10,7 +10,12 @@ func TestGenUUID(t *testing.T) {
 }
 
 func TestGenCID(t *testing.T) {
-	fmt.Println(len("170976fa8a2449b3b88"))
+	length := len("170976fa8a2449b3b88")
+	result := GenCID()
+	if length != len(result) {
+		t.Error("cid长度不一致")
+	}
+	fmt.Println("cid:", result)
 }
 
 func TestGenSessionID(t *testing.T) {

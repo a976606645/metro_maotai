@@ -142,6 +142,7 @@
     <el-dialog
       title="增加用户"
       :visible.sync="dialogFormVisible"
+      @close="onCloseAddUserDialog"
     >
       <el-form>
 
@@ -163,6 +164,7 @@
             style="width:150px"
           />
           <el-button
+            :disabled="sendSmsBtnDisable"
             type="primary"
             @click="sendSms"
           >
@@ -264,7 +266,8 @@ export default {
       storeDialogFormVisible: false,
       storeList: [],
       selectStore: null,
-      currentSelectUser: null
+      currentSelectUser: null,
+      sendSmsBtnDisable: false
     }
   },
   methods: {
@@ -281,6 +284,8 @@ export default {
             type: 'success',
             duration: 2000
           })
+
+          this.fetchData()
         })
         .catch()
     },
@@ -294,6 +299,8 @@ export default {
           })
         })
         .catch()
+
+      this.sendSmsBtnDisable = true
     },
     fetchData() {
       this.listLoading = true
@@ -367,6 +374,10 @@ export default {
     },
     handleStoreChange(val) {
       this.selectStore = val
+    },
+    onCloseAddUserDialog() {
+      console.log('onCloseAddUserDialog')
+      this.sendSmsBtnDisable = false
     }
   }
 }

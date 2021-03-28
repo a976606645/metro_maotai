@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"testing"
+	"time"
 )
 
 func TestQualication(t *testing.T) {
@@ -18,4 +19,10 @@ func TestQualication(t *testing.T) {
 
 	fmt.Printf("%+v \n", qinfo)
 
+}
+
+func TestTomorrow(t *testing.T) {
+	y, m, d := time.Now().Add(24 * time.Hour).Date()
+	shipment := fmt.Sprintf("%d-%d-%d", y, m, d)
+	fmt.Println("shipment:", shipment)
 }

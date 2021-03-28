@@ -17,6 +17,8 @@ type TableUser struct {
 	Qualification bool      `json:"qualification" gorm:"default:false"`
 	RemainCount   int       `json:"remain_count" gorm:"default:0"`
 	CreateTime    time.Time `json:"create_time" gorm:"default:(datetime('now', 'localtime'))"`
+
+	TempID string `json:"-" gorm:"-"`
 }
 
 func (*TableUser) TableName() string {
@@ -27,7 +29,8 @@ type TableOrder struct {
 	ID        int       `json:"id" gorm:"PRIMARY_KEY;AUTO_INCREMENT" `
 	Phone     string    `json:"phone"`
 	Num       int       `json:"num"`
-	OrderTime time.Time `json:"order_time"`
+	StoreID   int       `json:"store_id"`
+	OrderTime time.Time `json:"order_time" gorm:"default:(datetime('now', 'localtime'))"`
 }
 
 func (*TableOrder) TableName() string {
